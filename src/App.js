@@ -1,12 +1,17 @@
 import './App.css';
 import Header from './Components/Header/Header';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import Footer from './Components/Footer/Footer';
+
 
 function App() {
   return (
     <div>
       <Header />
-      <ItemListContainer greeting='Bienvenidos a mi pagina'/>
+      <ItemListContainer />
+      <ItemDetailContainer />
+      <Footer />
     </div>
   );
 }

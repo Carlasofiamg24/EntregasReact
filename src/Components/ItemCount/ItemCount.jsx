@@ -1,47 +1,34 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const ItemCount = ({stock, initial, onAdd}) => {
-    const [cantidad, setCantidad] = useState(initial);
-    const [itemStock, setItemStock] =  useState(stock);
-    const [itemAdd, setItemAdd] = useState(onAdd);
+const ItemCount = ({ stock, initial }) => {
+    const [count, setCount] = useState(initial);
 
-    const decrementarCantidad = (valor) => {
-        if(valor > 0){
-            setCantidad(valor)
-        }  
+    const sumar = () => {
+        count < stock && setCount(count + 1);
     };
 
-    const incrementarCantidad = (valor) => {
-        if(valor <= itemStock){
-            setCantidad(valor)
-        }  
+    const restar = () => {
+        count > initial && setCount(count - 1);
     };
 
-    const agregarProductos = () => {
-        if(cantidad <= itemStock){
-            setItemStock(itemStock - cantidad)
-            setItemAdd(itemAdd + cantidad)
-        }
-    };
-    
-    return(
-    <div className="container py-5">
-        <div className="row">
-            <div className="col-md-2">
-                <p className="text-center">Nombre del producto</p>
-                <div className="input-group">
-                    <input type="button" className="btn btn-secondary" value='-' onClick={()=> {decrementarCantidad(cantidad - 1)}} />
-                    <input type="text" className="form-control" value={cantidad} onChange={()=>{}} />
-                    <input type="button" className="btn btn-secondary" value='+' onClick={()=> {incrementarCantidad(cantidad + 1)}} />
-                </div>
-                <div className="d-grid gap-2 py-2">
-                    <input type="button" className="btn btn-secondary" value='agregar' onClick={()=>{agregarProductos()}} />
-                </div>
-                <p>Productos Seleccionados: {itemAdd}</p>
+    const agregarCarrito = () => {
+        count <= stock && setCount (count <= stock)
+        alert(`Se agregaron al carrito ${count} productos`);
+    }
+    return (
+        <div className="container-counter">
+            <div className="container-btn">
+                <button className="btn-counter" onClick={restar}>
+                    -
+                </button>
+                <p style={{ fontSize: '24px' }}>{count} </p>
+                <button className="btn-counter" onClick={sumar}>
+                    +
+                </button>
             </div>
+            <button className="btn-counter" onClick={agregarCarrito}>Agregar al carrito</button>
         </div>
-    </div>
-    )
+    );
 };
 
 export default ItemCount;
