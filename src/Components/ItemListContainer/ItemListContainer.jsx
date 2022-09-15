@@ -35,7 +35,7 @@ const ItemListContainer = ({texto}) => {
         const getProductos = new Promise (resolve =>{
             setTimeout (() => {
                 resolve(productos);
-            }, 1000);
+            }, 500);
         });
         if(categoriaId) {
             getProductos.then(res => setItems(res.filter(productos => productos.category === categoriaId)));
