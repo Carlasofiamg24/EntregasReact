@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-/* import ItemCount from "../ItemCount/ItemCount"; */
+import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import {productos} from "../Mock/Productos"
+import {productos} from "../Mock/Productos";
+import { useParams } from "react-router-dom";
 
 
 
-const ItemListContainer = ( props ) => {
-    const [items, setItems] = useState([]);
+const ItemListContainer = ({texto}) => {
+   /*  const [items, setItems] = useState([]);
 
     useEffect(() => {
         const getProductos = () => 
@@ -25,18 +24,35 @@ const ItemListContainer = ( props ) => {
             console.log(error)
         })
     },[])
-        
-        
-        /* .then(
-            (respuesta) => {
-            setItems(respuesta);
+         */
+
+
+    const [items, setItems] = useState ([])
+
+    const {categoriaId} = useParams();
+
+    useEffect (() => {
+        const getProductos = new Promise (resolve =>{
+            setTimeout (() => {
+                resolve(productos);
+            }, 1000);
         });
-    }, []); */
+        if(categoriaId) {
+            getProductos.then(res => setItems(res.filter(productos => productos.category === categoriaId)));
+        } else{
+            getProductos.then(res => setItems(res));
+        }
+    
+    }, [categoriaId])
+   
+        
+   
 
     return(
-        <div>
+        <div className="container" >
             <ItemList items={items} />
            {/*  <ItemCount stock={5} initial={1} onAdd={0}  /> */}
+          {/*  <ItemList data={data} /> */}
         </div>
     )
 };

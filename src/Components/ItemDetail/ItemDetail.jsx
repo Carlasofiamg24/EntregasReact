@@ -1,9 +1,11 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 
+
 const ItemDetail = ({item}) => {
+    
     return(
-        <div className="detail">
+        <div className="detail" key={item.id}>
             <img src={item.img} alt={item.title} />
             <div className="infoDetail">
                 <h2>{item.title}</h2>

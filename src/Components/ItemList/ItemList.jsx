@@ -1,14 +1,16 @@
 import React from "react";
 import Item from "../Item/Item";
 
+/* import ItemCount from "../ItemCount/ItemCount"; */
 
-const ItemList = ({items}) => {
+const ItemList = ({items = []}) => {
+
     return(
-        <div className="containerCard">
-            {items.map((item)=>{
-                return <Item key={item.id} item={item} />
-            })}
-        </div>
+        <div className="row containerCard">
+        {items.map((item)=>{
+            return <div className="col-md-4" key={item.id}><Item key={item.id} item={item} info={item}/></div>
+        })}
+    </div>
     )
 };
 

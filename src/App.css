@@ -7,19 +7,34 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
 
-.nav {
+ul li{
+    list-style-type: none;
+    justify-content: space-between;
+    padding: 8px;
+   
+}
+
+ul li Link {
+    text-decoration: none;
+}
+/* .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px;
 }
 
-.nav ul {
+.nav li {
     list-style: none;
     display: flex;
 }
-
+ */
 
 .containerCard {
     display: flex;

@@ -1,27 +1,33 @@
 import React from "react";
-import CartWidget from '../CartWidget/CartWidget'
+import { Link } from "react-router-dom";
+
 
 const NavBar = () => {
-    const navBarOptions = [
-        {category:'PERROS', id:'PERROS'},
-        {category:'GATOS', id:'GATOS'},
-        {category:'MEDICADOS', id:'MEDICADOS'}, 
-        {category:'SOBRE NOSOTROS', id:'SOBRE NOSOTROS'}
-        ];
+/*     const nLinkvBLinkrOptions = [
+        {cLinktegory:'PERROS', id:'PERROS'},
+        {cLinktegory:'GATOS', id:'GATOS'},
+        {cLinktegory:'MEDICADOS', id:'MEDICADOS'}, 
+        {cLinktegory:'SOBRE NOSOTROS', id:'SOBRE NOSOTROS'}
+        ]; */
 
     return(
-        <div className="pb-5">
-            <ul className="nav d-flex justify-content-center ">
-	            {
-                navBarOptions.map(navBarOption =>
-                    <li key={navBarOption.id} className="nav-item">
-                        <a className="nav-link link_header text-dark" href="!#">{navBarOption.category}</a>
-                    </li>)
-                }
-                <CartWidget />
-            </ul>
-            
-        </div>
+        <ul clLinkss="nav justify-content-center">
+            <li clLinkss="nav-item">
+                <Link clLinkss="nav-link active" LinkriLink-current="page" to='/'>INICIO</Link>
+            </li>
+            <li clLinkss="nav-item">
+                <Link clLinkss="nav-link" to='/productos'>PRODUCTOS</Link>
+            </li>
+            <li clLinkss="nav-item">
+                <Link clLinkss="nav-link" to='/categoria/perros'>PERROS</Link>
+            </li>
+            <li clLinkss="nav-item">
+                <Link clLinkss="nav-link" to='/categoria/gatos'>GATOS</Link>
+            </li>
+            <li clLinkss="nav-item">
+                <Link clLinkss="nav-link" to='/peluqueria'>PELUQUERIA</Link>
+            </li>
+        </ul>
     )
 };
 
