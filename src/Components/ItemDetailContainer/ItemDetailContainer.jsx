@@ -13,11 +13,11 @@ const ItemDetailContainer = () => {
                     resolve(productos);
                 }, 500);
             });
-            getProducto.then(res => setItem(res.find(producto => producto.id === parseInt(detalleId))));
+            getProducto.then(res => setItem(res.find(producto => producto.id === detalleId)));
         }, [detalleId])
 
     return (
-        <ItemDetail item={item} />
+        <ItemDetail item={item}/>
     )
 };
 

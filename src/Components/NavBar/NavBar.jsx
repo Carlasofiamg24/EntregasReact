@@ -1,31 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import CartWidget from '../CartWidget/CartWidget'
 
 
 const NavBar = () => {
-/*     const nLinkvBLinkrOptions = [
-        {cLinktegory:'PERROS', id:'PERROS'},
-        {cLinktegory:'GATOS', id:'GATOS'},
-        {cLinktegory:'MEDICADOS', id:'MEDICADOS'}, 
-        {cLinktegory:'SOBRE NOSOTROS', id:'SOBRE NOSOTROS'}
+/*     const nNavLinkvBNavLinkrOptions = [
+        {cNavLinktegory:'PERROS', id:'PERROS'},
+        {cNavLinktegory:'GATOS', id:'GATOS'},
+        {cNavLinktegory:'MEDICADOS', id:'MEDICADOS'}, 
+        {cNavLinktegory:'SOBRE NOSOTROS', id:'SOBRE NOSOTROS'}
         ]; */
 
     return(
-        <ul clLinkss="nav justify-content-center">
-            <li clLinkss="nav-item">
-                <Link clLinkss="nav-link active" LinkriLink-current="page" to='/'>INICIO</Link>
+        <ul className="nav justify-content-center">
+            <li className="nav-item">
+                <NavLink className="nav-link active text-dark" NavLinkriNavLink-current="page" to='/'>INICIO</NavLink>
             </li>
-            <li clLinkss="nav-item">
-                <Link clLinkss="nav-link" to='/productos'>PRODUCTOS</Link>
+            <li className="nav-item">
+                <NavLink className="nav-link text-dark" to='/productos'>PRODUCTOS</NavLink>
             </li>
-            <li clLinkss="nav-item">
-                <Link clLinkss="nav-link" to='/categoria/perros'>PERROS</Link>
+            <li className="nav-item">
+                <NavLink className="nav-link text-dark" to='/categoria/perros'>PERROS</NavLink>
             </li>
-            <li clLinkss="nav-item">
-                <Link clLinkss="nav-link" to='/categoria/gatos'>GATOS</Link>
+            <li className="nav-item">
+                <NavLink className="nav-link text-dark" to='/categoria/gatos'>GATOS</NavLink>
             </li>
-            <li clLinkss="nav-item">
-                <Link clLinkss="nav-link" to='/peluqueria'>PELUQUERIA</Link>
+            <li className="nav-item">
+                <NavLink className="nav-link text-dark" to='/peluqueria'>PELUQUERIA</NavLink>
+            </li>
+            <li className="nav-item">
+                <NavLink to={"/cart"}><CartWidget/></NavLink>
             </li>
         </ul>
     )

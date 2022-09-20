@@ -6,27 +6,6 @@ import { useParams } from "react-router-dom";
 
 
 const ItemListContainer = ({texto}) => {
-   /*  const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        const getProductos = () => 
-            new Promise ((res,rej) => {
-                setTimeout(()=>{
-                    res(productos)
-                },500)
-            });
-
-        getProductos()
-        .then((data)=> {
-            setItems(data)
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-    },[])
-         */
-
-
     const [items, setItems] = useState ([])
 
     const {categoriaId} = useParams();
