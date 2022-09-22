@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, /* useEffect */} from 'react'
 import { Link } from 'react-router-dom';
 
 const ItemCount = ({initial, stock, onAdd}) => {
@@ -12,9 +12,10 @@ const ItemCount = ({initial, stock, onAdd}) => {
         count > initial && setCount(count - 1);
     };
 
-    useEffect(() => {
-        setCount(initial);
-    }, [initial])
+    const agregar = () =>{
+        onAdd(count)
+    };
+    
 
     return (
     <div className='container-counter'>
@@ -29,7 +30,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
         </div>
 
         <Link>
-            <button className='btn-counter' disabled={stock <= 0} onClick = {() => onAdd(count)}>Agregar al carrito</button>
+            <button className='btn-counter'  onClick = {agregar}>Agregar al carrito</button>
         </Link> 
     </div> 
     
