@@ -30,8 +30,6 @@ const ItemListContainer = ({texto}) => {
     return(
         <div className="container" >
             <ItemList items={items} />
-           {/*  <ItemCount stock={5} initial={1} onAdd={0}  /> */}
-          {/*  <ItemList data={data} /> */}
         </div>
     )
 };

@@ -47,6 +47,14 @@ const CartProvider= (props) =>{
         });
         return count;
     };
+    const precioTotal = () => {
+        const copia = [...cart];
+        let count = 0;
+        copia.forEach((producto) => {
+            count = count + producto.price * producto.cantidad;
+        });
+        return count;
+    };
 
     const deleteOne = (id) => {
         const productosFiltrados = cart.filter((prod) => prod.id !== id);
@@ -57,7 +65,7 @@ const CartProvider= (props) =>{
     
 
     return(
-        <CartContext.Provider value={{cart, addToCart,deleteAll,totalUnidades,deleteOne}}>
+        <CartContext.Provider value={{cart, addToCart,deleteAll,totalUnidades,deleteOne, precioTotal}}>
             {props.children}
         </CartContext.Provider>
     )

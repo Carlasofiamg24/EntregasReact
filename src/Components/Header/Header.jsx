@@ -7,11 +7,6 @@ const Header = () => {
 
     return(
         <div className="container-fluid">
-            <div className="row">
-                <div className="col-md-12 fondoGris">
-                    <a href="!#"><img src="" alt="" /></a>
-                </div>
-            </div>
             <div className="row d-flex justify-content-center mt-3">
                 <div className="col-md-3 offset-md-5">
                     <li className="nav-item">

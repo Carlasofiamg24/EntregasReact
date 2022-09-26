@@ -13,7 +13,7 @@ const PaginaPrincipal = () => {
             new Promise ((res,rej) => {
                 setTimeout(()=>{
                     res(imagenesInicio)
-                },500)
+                },100)
             });
 
         getImages()
