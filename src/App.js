@@ -25,8 +25,6 @@ function App() {
             <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>} />
             <Route path='/peluqueria' element={<Peluqeria />}/>
             <Route path='/cart' element={<Cart />} />
-            {/*<ItemListContainer />
-            <ItemDetailContainer />*/}
           </Routes>
         <Footer />
       </CartProvider>

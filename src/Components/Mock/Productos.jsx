@@ -37,7 +37,7 @@ export const productos = [
     },
     {
         id: '5',
-        title: ' PRO PLAN GATO ADULT',
+        title: 'PRO PLAN GATO ADULT',
         price: 17200,
         stock: 5,
         description: 'Formulado para ayudar a los gatos adultos a mantenerse fuertes y llenos de vitalidad. Bolsa de 15 kg',

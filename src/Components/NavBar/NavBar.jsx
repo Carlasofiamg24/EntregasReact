@@ -4,13 +4,6 @@ import CartWidget from '../CartWidget/CartWidget'
 
 
 const NavBar = () => {
-/*     const nNavLinkvBNavLinkrOptions = [
-        {cNavLinktegory:'PERROS', id:'PERROS'},
-        {cNavLinktegory:'GATOS', id:'GATOS'},
-        {cNavLinktegory:'MEDICADOS', id:'MEDICADOS'}, 
-        {cNavLinktegory:'SOBRE NOSOTROS', id:'SOBRE NOSOTROS'}
-        ]; */
-
     return(
         <ul className="nav justify-content-center">
             <li className="nav-item">

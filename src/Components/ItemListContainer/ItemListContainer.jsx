@@ -1,35 +1,38 @@
 import React, { useEffect, useState } from "react";
-import ItemList from "../ItemList/ItemList";
-import {productos} from "../Mock/Productos";
 import { useParams } from "react-router-dom";
+import {getFirestore, collection, getDocs, where, query} from 'firebase/firestore';
+import ItemList from "../ItemList/ItemList";
+import Loading from '../Loading/Loading';
 
 
 
 const ItemListContainer = ({texto}) => {
     const [items, setItems] = useState ([])
-
     const {categoriaId} = useParams();
+    const [loading, setLoading] = useState(true);
 
     useEffect (() => {
-        const getProductos = new Promise (resolve =>{
-            setTimeout (() => {
-                resolve(productos);
-            }, 500);
-        });
-        if(categoriaId) {
-            getProductos.then(res => setItems(res.filter(productos => productos.category === categoriaId)));
-        } else{
-            getProductos.then(res => setItems(res));
-        }
+        const db = getFirestore();
+        const productosCollection = collection(db, 'productos-petshop');
     
+        if(categoriaId){
+            const productosFiltrado = query(productosCollection, where('category', '==', categoriaId))
+            getDocs(productosFiltrado)
+            .then(respuesta => setItems(respuesta.docs.map(producto => ({id: producto.id, ...producto.data()}))))
+           
+            
+        }else{
+            getDocs(productosCollection)
+            .then(respuesta => setItems(respuesta.docs.map(producto => ({id: producto.id, ...producto.data()}))))
+            setTimeout (() => {
+                setLoading(false);
+            }, 1000)
+        }
     }, [categoriaId])
-   
-        
-   
 
     return(
         <div className="container" >
-            <ItemList items={items} />
+            {loading ? <Loading /> : <ItemList items={items}/> }
         </div>
     )
 };
