@@ -7,7 +7,7 @@ const NavBar = () => {
     return(
         <ul className="nav justify-content-center">
             <li className="nav-item">
-                <NavLink className="nav-link active text-dark" NavLinkriNavLink-current="page" to='/'>INICIO</NavLink>
+                <NavLink className="nav-link active text-dark" to='/'>INICIO</NavLink>
             </li>
             <li className="nav-item">
                 <NavLink className="nav-link text-dark" to='/productos'>PRODUCTOS</NavLink>

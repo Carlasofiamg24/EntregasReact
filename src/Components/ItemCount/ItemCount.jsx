@@ -1,4 +1,4 @@
-import React, {useState, /* useEffect */} from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
 const ItemCount = ({initial, stock, onAdd}) => {
@@ -20,7 +20,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
     return (
     <div className='container-counter'>
         <div className='container-btn'>
-            <button className='btn-counter'  onClick={restar}>
+            <button className='btn-counter' onClick={restar}>
                 -
             </button>
             <p style={{ fontSize: '24px' }}>{count} </p>

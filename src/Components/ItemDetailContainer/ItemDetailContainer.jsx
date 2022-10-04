@@ -13,10 +13,10 @@ const ItemDetailContainer = () => {
             const db = getFirestore();
             const queryDoc = doc(db, 'productos-petshop',detalleId);
             getDoc(queryDoc)
-            .then(res => setItem({id: res.id, ...res.data()}))
+            .then(res => setItem({id:res.id, ...res.data()}))
             setTimeout (() => {
                 setLoading(false);
-            }, 2000)
+            }, 300)
         }, [detalleId])
 
     return (

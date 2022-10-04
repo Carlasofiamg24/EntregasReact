@@ -6,7 +6,7 @@ import Loading from '../Loading/Loading';
 
 
 
-const ItemListContainer = ({texto}) => {
+const ItemListContainer = () => {
     const [items, setItems] = useState ([])
     const {categoriaId} = useParams();
     const [loading, setLoading] = useState(true);
@@ -26,7 +26,7 @@ const ItemListContainer = ({texto}) => {
             .then(respuesta => setItems(respuesta.docs.map(producto => ({id: producto.id, ...producto.data()}))))
             setTimeout (() => {
                 setLoading(false);
-            }, 1000)
+            }, 300)
         }
     }, [categoriaId])
 

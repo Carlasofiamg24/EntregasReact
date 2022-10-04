@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from '../../Assets/MundoAnimalNombre.png';
 import '../Header/Header.css'
 
@@ -10,7 +11,7 @@ const Header = () => {
             <div className="row d-flex justify-content-center mt-3">
                 <div className="col-md-3 offset-md-5">
                     <li className="nav-item">
-                        <a className="nav-link active image-fluid" aria-current="page" href="!#"><img src={logo} width="88" alt="Logo Royal" /></a>
+                        <Link className="nav-link active image-fluid" aria-current="page" to='/'><img src={logo} width="88" alt="Logo Royal" /></Link>
                     </li>
                 </div>
                 <div className="col-md-4">

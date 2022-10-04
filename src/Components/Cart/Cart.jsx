@@ -15,7 +15,7 @@ const Cart = () =>{
         )
     };
 
-    return(
+   return(
         <>
         {
             cart.map(producto => <ItemCart key={producto.id} producto={producto} />)
@@ -25,6 +25,9 @@ const Cart = () =>{
         </div>
         <div className='d-flex justify-content-center p-1'>
             <Link to='/productos' className='btn-counter'>Seguir comprando</Link>
+            <Link to={"/checkout"} title="Finalizar Compra">
+                <button className="btn-counter">Finalizar Compra</button>
+             </Link>
             <button  className='btn-counter' onClick={deleteAll}>Vaciar Carrito</button>
         </div>
         </>

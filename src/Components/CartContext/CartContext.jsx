@@ -61,8 +61,6 @@ const CartProvider= (props) =>{
         setCart(productosFiltrados);
     };
     
-    console.log(cart);
-    
 
     return(
         <CartContext.Provider value={{cart, addToCart,deleteAll,totalUnidades,deleteOne, precioTotal}}>
