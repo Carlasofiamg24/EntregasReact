@@ -9,7 +9,6 @@ const Success = ({id, direccion}) => {
                 <p><img src={Logo} alt="Mundo animal logo" width="180" /></p>
                 <p>La Orden de Compra se generó con el ID: <b>{id}</b>.<br/>
                 Entrega en la direccion: <b>{direccion}</b>
-            
                 </p>
             </div>
         </div>

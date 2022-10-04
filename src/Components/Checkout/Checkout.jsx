@@ -26,7 +26,6 @@ const Checkout = () => {
             const now = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
             const order = {buyer:buyer, items:items, date:now, total:precioTotal()};
             
-            //Creo que la conexión al Firestore, para cargar la Orden de Compra
             const db = getFirestore();
             const orderCollection =  collection(db, "pedidos-petShop");
             addDoc(orderCollection, order).then(({id}) => {
