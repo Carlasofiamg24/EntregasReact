@@ -42,19 +42,19 @@ const Checkout = () => {
                 <div className="col-md-4 offset-md-2">
                         <div className="mb-2">
                             <label for="nombre" className="form-label">Nombre</label>
-                            <input type="text" className="form-control" id="nombre" onInput={(e) => setNombre(e.target.value)} />
+                            <input type="text" className="form-control" id="nombre" onInput={(e) => setNombre(e.target.value)} required />
                         </div>
                         <div className="mb-2">
                             <label for="email" className="form-label">Email</label>
-                            <input type="text" className="form-control" id="email" onInput={(e) => setEmail(e.target.value)} />
+                            <input type="text" className="form-control" id="email" onInput={(e) => setEmail(e.target.value)} required />
                         </div>
                         <div className="mb-2">
                             <label for="telefono" className="form-label">Teléfono</label>
-                            <input type="text" className="form-control" id="telefono" onInput={(e) => setTelefono(e.target.value)} />
+                            <input type="number" className="form-control" id="telefono" onInput={(e) => setTelefono(e.target.value)} required />
                         </div>
                         <div className="mb-2">
-                            <label for="telefono" className="form-label">Direccion</label>
-                            <input type="text" className="form-control" id="telefono" onInput={(e) => setDireccion(e.target.value)} />
+                            <label for="direccion" className="form-label">Direccion</label>
+                            <input type="text" className="form-control" id="direccion" onInput={(e) => setDireccion(e.target.value)} required />
                         </div>
                         <button type="button" className="btn btn-success" onClick={() => {sendOrder()}}>Generar Orden</button>
                 </div>

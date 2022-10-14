@@ -10,10 +10,8 @@ const PaginaPrincipal = () => {
 
     useEffect(() => {
         const getImages = () => 
-            new Promise ((res,rej) => {
-                setTimeout(()=>{
-                    res(imagenesInicio)
-                },100)
+            new Promise ((res) => {
+                res(imagenesInicio)
             });
 
         getImages()
@@ -26,9 +24,9 @@ const PaginaPrincipal = () => {
     },[])
 
     return(
-        <>
+        <div>
         <ImgList items={images}/>
-        </>
+        </div>
     )
 };
 

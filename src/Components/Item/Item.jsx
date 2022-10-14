@@ -7,8 +7,8 @@ const Item = ({item}) => {
             <img src={item.img} alt="nombre" style={{width:216, height:280}} />
             <div className="infoCard">
                 <h2>{item.title}</h2>
-                <h4>${item.price}</h4>
-                <h5>#{item.category}</h5>
+                <h3>${item.price}</h3>
+                <h4>#{item.category}</h4>
 
                <div><Link to={`/detalle/${item.id}`} className='btn-counter'>Ver detalle</Link></div> 
             </div>

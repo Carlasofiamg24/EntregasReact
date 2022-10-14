@@ -154,3 +154,17 @@ ul li{
     padding: 7px;
     border: 2px solid #181818;
 }
+
+.colorContacto{
+    color: red;
+}
+
+.bgRed{
+    background-color: red;
+}
+
+.imgContacto{
+    display: flex;
+    justify-content: center;
+    margin: 5,0,5,100;
+}

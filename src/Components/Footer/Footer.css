@@ -1,3 +1,19 @@
 .bgFooter{
     background-color: #666;
 }
+
+ul {
+    list-style: none;
+}
+
+ul li{
+    list-style-type: none;
+    display: flex;
+    
+}
+
+ul li :Link{
+    text-decoration: none;
+    justify-content: center ;
+    color: bisque;
+}

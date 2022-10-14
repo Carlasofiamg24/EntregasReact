@@ -24,9 +24,7 @@ const ItemListContainer = () => {
         }else{
             getDocs(productosCollection)
             .then(respuesta => setItems(respuesta.docs.map(producto => ({id: producto.id, ...producto.data()}))))
-            setTimeout (() => {
                 setLoading(false);
-            }, 300)
         }
     }, [categoriaId])
 

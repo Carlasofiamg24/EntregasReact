@@ -9,7 +9,7 @@ const ItemCart = ({producto}) =>{
         <div className="itemCart" >
             <img className="carta" src={producto.img} alt={producto.title} />
             <div className="carta">
-                <h4>{producto.title}</h4>
+                <h3>{producto.title}</h3>
                 <p>Cantidad: {producto.cantidad}<br/>Precio por unidad: ${producto.price}<br/>Subtotal : $ {producto.price * producto.cantidad}</p>
                 <button className="btn-counter" onClick={()=>deleteOne(producto.id)}>Eliminar</button><br/>
             </div>

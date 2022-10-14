@@ -10,13 +10,13 @@ const Cart = () =>{
         return(
             <div className='text-center'>
                 <p>No hay elementos en el carrito</p>
-                <Link to='/productos' className='btn-counter'>Hacer compras</Link>
+                <Link to='/categoria/productos' className='btn-counter'>Hacer compras</Link>
             </div>
         )
     };
 
    return(
-        <>
+        <div>
         {
             cart.map(producto => <ItemCart key={producto.id} producto={producto} />)
         } 
@@ -30,7 +30,7 @@ const Cart = () =>{
              </Link>
             <button  className='btn-counter' onClick={deleteAll}>Vaciar Carrito</button>
         </div>
-        </>
+        </div>
     )
 };
 

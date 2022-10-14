@@ -20,9 +20,9 @@ const ItemDetailContainer = () => {
         }, [detalleId])
 
     return (
-        <>  
+        <div>  
          {loading ? <Loading /> : <ItemDetail item={item}/>}
-        </>
+        </div>
     )
 };
 

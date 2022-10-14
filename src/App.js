@@ -10,27 +10,27 @@ import Peluqeria from './Components/Peluqueria/Peluqueria';
 import Cart from './Components/Cart/Cart';
 import CartProvider from './Components/CartContext/CartContext';
 import Checkout from './Components/Checkout/Checkout';
+import Contacto from './Components/Contacto/contacto';
 
 
 
 function App() {
   return (
-    <div>
       <CartProvider>
         <Header />
         <NavBar />
           <Routes>
             <Route path='/' element={<PaginaPrincipal />}/>
-            <Route path='/productos' element={< ItemListContainer />}/>
+            <Route path='/categoria/productos' element={< ItemListContainer />}/>
             <Route path='/categoria/:categoriaId' element={<ItemListContainer/>} />
             <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>} />
-            <Route path='/peluqueria' element={<Peluqeria />}/>
+            <Route path='categoria/peluqueria' element={<Peluqeria />}/>
             <Route path='/cart' element={<Cart />} />
-            <Route path={"/checkout"} element={<Checkout />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path='/contacto' element={<Contacto />} />
           </Routes>
         <Footer />
       </CartProvider>
-    </div>
   );
 }
 
